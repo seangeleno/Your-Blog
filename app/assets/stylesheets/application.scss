@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* General */
+
+body {
+	background: #222;
+	color: #fff;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #aaa;
+}
+
+
+/* Navbar */
+
+.navbar {
+	background: rgba(0,0,0,.8);
+	color: #fff;
+	border: none;
+}
+.navbar a , {
+	color: #fff;
+}
+.navbar li a:hover , .navbar li a:active , .nav .open > a, .nav .open > a:hover, .nav .open > a:focus  {
+	color: #fff;
+	background:none;
+}
+.navbar-collapse {
+	box-shadow: none;
+}
+.navbar .dropdown-menu {
+	background: rgba(0,0,0,.8);
+	border: none;
+	box-shadow: none;
+}
+.navbar .dropdown-menu a {
+	color: #fff;
+}
+.navbar .dropdown-menu .divider {
+	background: #000;
+}
+.nav-blocker {
+	height: 70px;
+}
+.navbar-brand {
+	padding-top: 20px;
+}
+.navbar-toggle .icon-bar {
+	background: #fff;
+}
+/* Footer */
+
+footer {
+	padding: 30px;
+	margin-top: 30px;
+	background: rgba(0,0,0,.8);
+	color: #fff;
+}
+footer a {
+	color: #fff;
+}
+footer input {
+	padding: 10px;
+	font-size: 16px;
+	width:300px;
+	color: #333;
+}

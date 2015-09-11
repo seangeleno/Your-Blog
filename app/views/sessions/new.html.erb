@@ -1,0 +1,21 @@
+<div class="nav-blocker"></div>
+
+<section class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <%= form_for :login do |f| %>
+          <ul>
+            <li><h4>Enter Your Email</h4></li>
+            <li><%= f.text_field :email %></li>
+          </ul>
+          <ul>
+            <li><h4>Enter Password</h4></li>
+            <li><%= f.password_field :password %></li>
+          </ul>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

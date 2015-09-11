@@ -1,0 +1,12 @@
+<% @blog.each do |blog| %>
+	<div class="col-sm-12">
+		<h3 class="text-center">
+			<%= blog.comments.commenter %>
+		</h3>
+		<p><%= blog.comments.opinion %></p>
+		<ul>
+			<li><div class="btn"><%= link_to 'Edit Comment' , edit_blog_comment_path %></div></li>
+			<li><div class="btn"><%= link_to 'Delete Comment' , comment_path( comment ) , method: :delete , data: { confirm: "Are you sure?" } %></div></li>
+		</ul>
+	</div>
+<% end %>
