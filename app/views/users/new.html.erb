@@ -3,7 +3,7 @@
 <section class="login">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 text-center">
+      <div class="col-sm-12 text-center">
         <%= form_for @user do |f| %>
           <ul>
             <li><h4>Enter Full Name</h4></li>
@@ -13,8 +13,6 @@
             <li><h4>Enter Your Email</h4></li>
             <li><%= f.text_field :email %></li>
           </ul>
-        </div>
-        <div class="col-sm-6 text-center">
           <ul>
             <li><h4>Enter Password</h4></li>
             <li><%= f.password_field :password %></li>
@@ -23,8 +21,6 @@
             <li><h4>Password Confirmation</h4></li>
             <li><%= f.password_field :password_confirmation %></li>
           </ul>
-        </div>
-        <div class="col-sm-12 text-center">
           <%= f.submit %>
         <% end %>
       </div>

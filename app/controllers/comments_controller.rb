@@ -14,6 +14,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find( params[ :blog_id ] )
+    @comment = Comment.find( params[ :id ] )
   end
 
   def create
@@ -28,8 +30,9 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update(comment_params)
-      redirect_to @comment , notice: "Comment Was Successfully Saved"
+    @comment = Comment.find( params[ :id ] )
+    if @comment.update( comment_params )
+      redirect_to blogs_path , notice: "Comment Was Successfully Saved"
     else
       render :edit
     end
@@ -39,6 +42,11 @@ class CommentsController < ApplicationController
     @comment = Comment.find( params[ :id ] )
     @comment.destroy
     redirect_to blogs_path , notice: "Comment Was Successfully Destroyed"
+  end
+
+  private
+  def comment_params
+    params.require( :comment ).permit( :commenter , :opinion )
   end
 
 end

@@ -8,17 +8,17 @@
 					<h2 class="text-center"><%= blog.title %></h2>
 					<p><%= blog.post %></p>
 					<ul>
-						<li><div class="btn"><%= link_to 'More Info' , blog_path( blog ) %></div></li>
-						<li><div class="btn"><%= link_to 'Edit Blog' , edit_blog_path( blog ) %></div></li>
-						<li><div class="btn"><%= link_to 'Delete Blog' , blog_path( blog ) , method: :delete , data: { confirm: "Are you sure?" } %></div></li>
-						<li><div class="btn"><%= link_to 'Have an Opinion' , new_blog_comment_path(blog)  %></div></li>
+						<li><%= link_to 'More Info' , blog_path( blog ) , class: "btn" %></li>
+						<li><%= link_to 'Edit Blog' , edit_blog_path( blog ) , class: "btn" %></li>
+						<li><%= link_to 'Delete Blog' , blog_path( blog ) , method: :delete , data: { confirm: "Are you sure?" } ,class: "btn" %></li>
+						<li><%= link_to 'Have an Opinion' , new_blog_comment_path(blog) , class: "btn" %></li>
 					</ul>
 					<% blog.comments.each do |comment| %>
 						<h3 class="text-center"><%= comment.commenter %></h3>
 						<p><%= comment.opinion %></p>
 						<ul>
-							<li><div class="btn"><%= link_to 'Edit Comment' , edit_blog_comment_path( blog , comment ) %></div></li>
-							<li><div class="btn"><%= link_to 'Delete Comment' , blog_comment_path( blog , comment ) , method: :delete , data: { confirm: "Are you sure?" } %></div></li>
+							<li><%= link_to 'Edit Comment' , edit_blog_comment_path( blog , comment ) , class: "btn" %></li>
+							<li><%= link_to 'Delete Comment' , blog_comment_path( blog , comment ) , method: :delete , data: { confirm: "Are you sure?" } , class: "btn" %></li>
 						</ul>
 					<% end %>
 				</div>

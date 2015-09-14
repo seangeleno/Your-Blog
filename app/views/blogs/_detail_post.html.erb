@@ -3,19 +3,19 @@
 <section class="edit">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-12">
 				<%= form_for @blog do |f| %>
 					<p><%= f.label :title %></p>
-					<p class="title-area"><%= f.text_area :title %></p>
+					<p class="title-area"><%= f.text_field :title %></p>
 					<hr />
 					<p><%= f.label :post %></p>
 					<p class="post-area"><%= f.text_area :post %></p>
 					<hr />
-					<p><%= f.submit "Submit" %></p>
+					<ul>
+						<li><%= f.submit "Submit" , class: "btn" %></li>
+						<li><%= link_to 'Go Home' , blogs_path , class: "btn" %></li>
+					</ul>
 				<% end %>
-				<div class="go-home">
-					<%= link_to 'Go Home' , blogs_path %>
-				</div>
 			</div>
 		</div>
 	</div>
