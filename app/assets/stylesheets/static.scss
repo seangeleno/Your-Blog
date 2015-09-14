@@ -1,0 +1,44 @@
+// Place all the styles related to the generals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.static-home-bg {
+  background: image-url("static/header.jpg") center center no-repeat fixed;
+  background-size: cover;
+  height: 400px;
+}
+
+.welcome {
+
+  .row {
+    margin: 30px 0;
+  }
+  .example1 {
+    background: url("http://blog.vendhq.com/wp-content/uploads/2014/04/topshop.png") top center no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: auto;
+    border: 2px solid #333;
+  }
+  .example2 {
+    background: url("http://www.raintoday.com/default/assets/Image/2010/09/fxfowle1.png") top left no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: auto;
+    border: 2px solid #333;
+  }
+  .example3 {
+    background: url("http://award-seo.com/wp-content/uploads/2012/08/Picture-59.png") top left no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: auto;
+    border: 2px solid #333;
+  }
+  .example4 {
+    background: url("http://www.blossomgraphicdesign.com/images/aesthete0wordpress-ecommerce-frontpage.jpg") top left no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: auto;
+    border: 2px solid #333;
+  }
+}

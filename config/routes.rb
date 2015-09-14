@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "sessions#new"
+  root "static#index"
 
   resources :users
   resources :blogs do
