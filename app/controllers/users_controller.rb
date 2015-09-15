@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  def show
+    if current_user
+      @user = current_user
+      @blog = @user.blogs
+    end
+  end
   def index
     @users = User.all
   end
@@ -10,14 +16,9 @@ class UsersController < ApplicationController
     @user = User.new( user_params )
     if @user.save
       session[ :user_id ] = @user.id.to_s
-      redirect_to blogs_path
+      redirect_to user_path( current_user.id )
     else
       render :new
-    end
-  end
-  def show
-    if current_user
-      @user = User.find( params[ :user_id ] )
     end
   end
 

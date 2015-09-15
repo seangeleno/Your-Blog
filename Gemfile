@@ -49,6 +49,10 @@ group :development do
 	gem 'better_errors'
 end
 
+group :development do
+ gem 'web-console', '~> 2.0'
+end
+
 gem "binding_of_caller"
 
 group :production do

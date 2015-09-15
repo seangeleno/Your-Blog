@@ -23,6 +23,9 @@ body {
 	background: #fff;
 	color: #222;
 }
+ul {
+	list-style: none;
+}
 
 a:hover {
 	text-decoration: none;
@@ -55,12 +58,12 @@ textarea , .title-area input {
 		background: rgba(0,0,0,.8);
 		color: #fff;
 		border: none;
-	a , {
+	a, .navbar li a, .navbar .nav .open > a {
 		color: #fff;
 	}
-	li a:hover , li a:active , .nav .open > a, .nav .open > a:hover, .nav .open > a:focus  {
+	.nav > li > a:hover, .nav > li > a:focus ,.navbar li a:active, .navbar li a:visited, .navbar .nav .open > a:hover, .navbar .nav .open > a:focus  {
 		color: #fff;
-		background:none;
+		background: none;
 	}
 	.dropdown-menu {
 		background: rgba(0,0,0,.8);
@@ -71,7 +74,28 @@ textarea , .title-area input {
 		color: #fff;
 	}
 	.dropdown-menu .divider {
-		background: #000;
+		background: rgba(255,255,255,.15);
+	}
+	p {
+		padding: 15px;
+		margin: 0;
+	}
+	.navbar-form {
+		margin: 6px 0 0 0;
+	}
+	.navbar-left {
+		padding: 0;
+	}
+	.btn {
+		background: rgba(255,255,255,.15);
+		padding: 7px 15px;
+	}
+	.btn:hover {
+		background: rgba(0,0,0,.3);
+	}
+	.form-control {
+		border-radius: 0;
+		padding: 10px;
 	}
 }
 

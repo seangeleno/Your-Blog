@@ -1,3 +1,18 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-header-img {
+  background: image-url("static/header.jpg") center center no-repeat fixed;
+  background-size: cover;
+  height: 400px;
+}
+.userShow {
+
+  ul {
+    margin-top: 30px;
+  }
+  ul li {
+    display: inline;
+  }
+}

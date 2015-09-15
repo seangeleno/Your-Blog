@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<%= form_for @blog do |f| %>
+				<%= form_for ( [ @user , @blog ] ) do |f| %>
 					<p><%= f.label :title %></p>
 					<p class="title-area"><%= f.text_field :title %></p>
 					<hr />
@@ -13,7 +13,7 @@
 					<hr />
 					<ul>
 						<li><%= f.submit "Submit" , class: "btn" %></li>
-						<li><%= link_to 'Go Home' , blogs_path , class: "btn" %></li>
+						<li><%= link_to 'Go Home' , user_blogs_path , class: "btn" %></li>
 					</ul>
 				<% end %>
 			</div>

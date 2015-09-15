@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<%= form_for ( [ @blog , @comment ] ) do |f| %>
+				<%= form_for ( [ current_user , @blog , @comment ] ) do |f| %>
 					<p><%= f.label :title %></p>
 					<p class="title-area"><%= f.text_field :commenter %></p>
 					<hr />

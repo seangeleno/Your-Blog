@@ -2,14 +2,22 @@
 	<div class="container">
 		<div class="row">
 			<% @blogs.each do |blog| %>
-				<div class="col-sm-12">
+				<div class="col-sm-6">
 					<h2 class="text-center"><%= blog.title %></h2>
 					<p><%= blog.post %></p>
 					<ul>
-						<li><%= link_to 'More Info' , blog_path( blog ) , class: "btn" %></li>
-						<li><%= link_to 'Edit Blog' , edit_blog_path( blog ) , class: "btn" %></li>
-						<li><%= link_to 'Delete Blog' , blog_path( blog ) , method: :delete , data: { confirm: "Are you sure?" } ,class: "btn" %></li>
-						<li><%= link_to 'Have an Opinion' , new_blog_comment_path(blog) , class: "btn" %></li>
+						<% if current_user %>
+							<% if current_user.admin == true %>
+								<li><%= link_to 'More Info' , blog_path( blog ) , class: "btn" %></li>
+								<li><%= link_to 'Edit Blog' , edit_user_blog_path( current_user , blog ) , class: "btn" %></li>
+								<li><%= link_to 'Delete Blog' , blog_path( blog ) , method: :delete , data: { confirm: "Are you sure?" } ,class: "btn" %></li>
+							<% end %>
+						<% end %>
+						<% if current_user %>
+							<li><%= link_to 'Have an Opinion' , new_user_blog_comment_path( current_user.id , blog.id ) , class: "btn" %></li>
+						<% else %>
+							<li><%= link_to "Sign Up To Comment" , new_user_path , class: "btn" %> &nbsp or &nbsp <%= link_to "Login Here" , user_login_path , class: "btn" %></li>
+						<% end %>
 					</ul>
 					<% blog.comments.each do |comment| %>
 						<h3 class="text-center"><%= comment.commenter %></h3>

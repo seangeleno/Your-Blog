@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  include SessionsHelper
   def index
     @comments = Comment.all
   end

@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-    user = User.find_by( email: params[ :login ][ :email ] )
-    if user && user.authentication( params[ :login ][ :password ] )
+    user = User.find_by( email: params[ :login ][ :email ].downcase )
+    if user && user.authenticate( params[ :login ][ :password ] )
       session[ :user_id ] = user.id.to_s
-      redirect_to blogs_path
+      redirect_to user_path( :user_id )
     else
       render :new
     end

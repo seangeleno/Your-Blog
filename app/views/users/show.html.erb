@@ -1,0 +1,18 @@
+<div class="user-header-img"></div>
+
+<section class="userShow">
+  <div class="container">
+    <div class="row">
+      <% @user.blogs.each do |blog| %>
+        <div class="col-sm-12">
+          <h2><%= blog.title %></h2>
+          <p><%= blog.post %></p>
+          <ul>
+            <li><%= link_to 'Edit Blog' , edit_user_blog_path( current_user.id , blog.id ) , class: "btn" %></li>
+            <li><%= link_to 'Delete Blog' , user_blog_path( @user , blog ) , method: :delete , data: { confirm: "Are you sure?" } ,class: "btn" %></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
