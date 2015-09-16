@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root "static#index"
 
-  resources :blogs , :only => [ :index , :show ]
+  get "blogs/index" => "blogs#index" , as: :blogs_path
+  get "blogs/show" => "blogs#show" , as: :blogs_show
+
   resources :users do
     resources :blogs do
       resources :comments

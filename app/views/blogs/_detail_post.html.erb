@@ -7,13 +7,13 @@
 				<%= form_for ( [ @user , @blog ] ) do |f| %>
 					<p><%= f.label :title %></p>
 					<p class="title-area"><%= f.text_field :title %></p>
-					<hr />
+						<hr />
 					<p><%= f.label :post %></p>
-					<p class="post-area"><%= f.text_area :post %></p>
+					<p class="post-area"><%= f.div :post , id: "eg-basic" , class: "text-small" %></p>
 					<hr />
 					<ul>
-						<li><%= f.submit "Submit" , class: "btn" %></li>
-						<li><%= link_to 'Go Home' , user_blogs_path , class: "btn" %></li>
+						<li><%= f.submit "Submit" , class: "btn"  %></li>
+						<li><%= link_to 'Go Home' , user_blogs_path( :id ) , class: "btn" %></li>
 					</ul>
 				<% end %>
 			</div>

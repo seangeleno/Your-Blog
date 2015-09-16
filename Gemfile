@@ -49,12 +49,14 @@ group :development do
 	gem 'better_errors'
 end
 
-group :development do
- gem 'web-console', '~> 2.0'
-end
-
 gem "binding_of_caller"
 
 group :production do
   gem "rails_12factor"
 end
+
+gem "paperclip", "~> 4.3"
+
+gem "wysiwyg-rails"
+
+gem 'font-awesome-sass'
