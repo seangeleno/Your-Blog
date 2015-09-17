@@ -6,7 +6,7 @@
       <div class="col-sm-12 text-center">
         <%= form_for @user , url: users_path, html: { multipart: true }  do |f| %>
           <ul>
-            <li><%= f.file_field :avatar %></li>
+            <li><%= f.file_field :avatar , class: "avatarBtn" %></li>
             <li><h4>Enter Full Name</h4></li>
             <li><%= f.text_field :name %></li>
           </ul>

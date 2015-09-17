@@ -1,4 +1,35 @@
-<div class="user-header-img"></div>
+<div class="user-header-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="currentUserInfo">
+          <li><%= image_tag current_user.avatar.url %></li>
+          <li><h2 class="userName"><%= current_user.name %></h2></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if current_user %>
+  <% if current_user.admin == true || current_user.id == blog.user_id %>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="editUser">
+              <ul>
+                <li><%=  %>></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% end %>
+<% end %>
 
 <section class="userShow">
   <div class="container">
@@ -7,10 +38,14 @@
         <div class="col-sm-12">
           <h2><%= blog.title %></h2>
           <p><%= blog.post %></p>
-          <ul>
-            <li><%= link_to 'Edit Blog' , edit_user_blog_path( current_user.id , blog.id ) , class: "btn" %></li>
-            <li><%= link_to 'Delete Blog' , user_blog_path( @user , blog ) , method: :delete , data: { confirm: "Are you sure?" } ,class: "btn" %></li>
-          </ul>
+          <% if current_user %>
+            <% if current_user.admin == true || current_user.id == blog.user_id %>
+              <ul>
+                <li><%= link_to 'Edit Blog' , edit_user_blog_path( blog.user_id , blog.id ) , class: "btn" %></li>
+                <li><%= link_to 'Delete Blog' , user_blog_path( blog.user_id , blog.id ) , method: :delete , data: { confirm: "Are you sure?" } ,class: "btn" %></li>
+              </ul>
+            <% end %>
+          <% end %>
         </div>
       <% end %>
     </div>

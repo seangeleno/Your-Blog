@@ -8,15 +8,18 @@
 					<%= @blog.title %>
 				</h2>
 				<p><%= @blog.post %></p>
+
 				<% @blog.comments.each do |comment| %>
 					<h3 class="text-center">
 						<%= comment.commenter %>
 					</h3>
 					<p><%= comment.opinion %></p>
-					<ul>
-						<li><%= link_to 'Edit Comment' , edit_blog_comment_path( @blog , comment ) , class: "btn" %></li>
-						<li><%= link_to 'Delete Comment' , blog_comment_path( @blog , comment ) , method: :delete , data: { confirm: "Are you sure?" } , class: "btn" %></li>
-					</ul>
+					<% if current_user.admin == true %>
+						<ul>
+							<li><%= link_to 'Edit Comment' , edit_blog_comment_path( @blog , comment ) , class: "btn" %></li>
+							<li><%= link_to 'Delete Comment' , blog_comment_path( @blog , comment ) , method: :delete , alert: { confirm: "Are you sure?" } , class: "btn" %></li>
+						</ul>
+					<% end %>
 				<% end %>
 			</div>
 		</div>

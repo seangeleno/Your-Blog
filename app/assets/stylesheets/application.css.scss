@@ -10,9 +10,26 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require froala_editor.min.css
- *= require froala_style.min.css
  *= require font-awesome
+ *= require jquery-ui
+ *= require jquery-ui/core
+ *= require jquery-ui/theme
+ *= require jquery-ui/draggable
+ *= require jquery-ui/resizable
+ *= require jquery-ui/selectable
+ *= require jquery-ui/sortable
+ *= require jquery-ui/accordion
+ *= require jquery-ui/autocomplete
+ *= require jquery-ui/button
+ *= require jquery-ui/datepicker
+ *= require jquery-ui/dialog
+ *= require jquery-ui/menu
+ *= require jquery-ui/progressbar
+ *= require jquery-ui/selectmenu
+ *= require jquery-ui/slider
+ *= require jquery-ui/spinner
+ *= require jquery-ui/tabs
+ *= require jquery-ui/tooltip
  *= require_tree .
  *= require_self
  */
@@ -54,7 +71,12 @@ textarea , .title-area input {
 .title-area textarea , .title-area input {
 	font-size: 18px;
 }
-
+.rotateToggle {
+	color: #ddd;
+	-ms-transform: rotate(270deg); /* IE 9 */
+  -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+  transform: rotate(270deg);
+}
 
 /* Navbar */
 
@@ -109,7 +131,7 @@ textarea , .title-area input {
 		margin: 0;
 	}
 	.userImageLi a {
-		padding: 0 0 0 15px;
+		padding: 0 5px;
 		margin-top: 5px;
 	}
 }

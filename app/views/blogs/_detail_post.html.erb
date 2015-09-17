@@ -1,21 +1,139 @@
 <div class="nav-blocker"></div>
 
 <section class="edit">
-	<div class="container">
+	<div class="container containerToggle">
 		<div class="row">
-			<div class="col-sm-12">
-				<%= form_for ( [ @user , @blog ] ) do |f| %>
-					<p><%= f.label :title %></p>
-					<p class="title-area"><%= f.text_field :title %></p>
+			<div class="col-sm-12 colToggle">
+				<div class="droppable">
+					<%= form_for ( [ @user , @blog ] ) do |f| %>
+						<p><%= f.label :title %></p>
+						<p class="title-area"><%= f.text_field :title %></p>
+							<hr />
+						<p><%= f.label :post %></p>
+						<p class="post-area"><%= f.text_area :post %></p>
 						<hr />
-					<p><%= f.label :post %></p>
-					<p class="post-area"><%= f.div :post , id: "eg-basic" , class: "text-small" %></p>
-					<hr />
-					<ul>
-						<li><%= f.submit "Submit" , class: "btn"  %></li>
-						<li><%= link_to 'Go Home' , user_blogs_path( :id ) , class: "btn" %></li>
-					</ul>
-				<% end %>
+						<ul>
+							<li><%= f.submit "Submit" , class: "btn"  %></li>
+							<li><%= link_to 'Home Page' , user_path( @user.id ) , class: "btn" %></li>
+						</ul>
+					<% end %>
+				</div>
+			</div>
+			<div class="blogEditor">
+				<div class="cogHolder">
+						<i class="fa fa-cog fa-2x"></i>
+				</div>
+
+				<ul class="nav nav-pills">
+				  <li role="presentation" class="active"><a  data-toggle="pill" href="#elements">Elements</a></li>
+				  <li role="presentation"><a  data-toggle="pill" href="#style">Style</a></li>
+				</ul>
+
+				<div class="tab-content">
+				  <div id="elements" class="tab-pane fade in active">
+
+						<!-- picture options -->
+						<ul class="mainListOptions">
+							<li><ul class="headerImage blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Full Width Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-lg blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Large Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-sm blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Small Image</strong></li>
+							</ul></li>
+						</ul>
+
+						<!-- header options -->
+						<ul class="mainListOptions">
+							<li><ul class="headerImage blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Full Width Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-lg blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Large Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-sm blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Small Image</strong></li>
+							</ul></li>
+						</ul>
+
+						<!-- text options -->
+						<ul class="mainListOptions">
+							<li><ul class="headerImage blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Full Width Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-lg blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Large Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-sm blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Small Image</strong></li>
+							</ul></li>
+						</ul>
+
+					</div>
+
+					<div id="style" class="tab-pane fade">
+
+						<!-- picture options -->
+						<ul class="mainListOptions">
+							<li><ul class="headerImage blogOption text-center">
+								<li><i class="fa fa-bell fa-5x"></i></li>
+								<li><strong>Full Width Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-lg blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Large Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-sm blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Small Image</strong></li>
+							</ul></li>
+						</ul>
+
+						<!-- header options -->
+						<ul class="mainListOptions">
+							<li><ul class="headerImage blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Full Width Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-lg blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Large Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-sm blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Small Image</strong></li>
+							</ul></li>
+						</ul>
+
+						<!-- text options -->
+						<ul class="mainListOptions">
+							<li><ul class="headerImage blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Full Width Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-lg blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Large Image</strong></li>
+							</ul></li>
+							<li><ul class="postImage-sm blogOption text-center">
+								<li><i class="fa fa-picture-o fa-5x"></i></li>
+								<li><strong>Small Image</strong></li>
+							</ul></li>
+						</ul>
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

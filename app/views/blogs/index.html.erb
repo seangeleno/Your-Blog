@@ -11,20 +11,28 @@
 								<li><%= link_to 'More Info' , user_blog_path( current_user , blog ) , class: "btn" %></li>
 								<li><%= link_to 'Edit Blog' , edit_user_blog_path( current_user , blog ) , class: "btn" %></li>
 								<li><%= link_to 'Delete Blog' , user_blog_path( current_user , blog ) , method: :delete , data: { confirm: "Are you sure?" } ,class: "btn" %></li>
+							<% else %>
+								<li><%= link_to 'Have an Opinion' , new_user_blog_comment_path( current_user.id , blog.id ) , class: "btn" %></li>
 							<% end %>
-							<li><%= link_to 'Have an Opinion' , new_user_blog_comment_path( current_user.id , blog.id ) , class: "btn" %></li>
 						<% else %>
 							<li><%= link_to "Comment" , new_user_path , class: "btn" %></li>
 						<% end %>
 						<li><%= link_to 'More Info' , user_blog_path( :id , blog ) , class: "btn" %></li>
 					</ul>
+				</div>
+
+				<div class="col-sm-12 comments">
+					<h3>Comments</h3>
+					<hr />
 					<% blog.comments.each do |comment| %>
-						<h3 class="text-center"><%= comment.commenter %></h3>
+						<h3><%= comment.commenter %></h3>
 						<p><%= comment.opinion %></p>
+						<% if current_user && current_user.admin == true %>
 							<ul>
 								<li><%= link_to 'Edit Comment' , edit_user_blog_comment_path( current_user , blog , comment ) , class: "btn" %></li>
 								<li><%= link_to 'Delete Comment' , user_blog_comment_path( current_user , blog , comment ) , method: :delete , data: { confirm: "Are you sure?" } , class: "btn" %></li>
 							</ul>
+						<% end %>
 					<% end %>
 				</div>
 			<% end %>
