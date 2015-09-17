@@ -12,7 +12,7 @@
 </div>
 
 <% if current_user %>
-  <% if current_user.admin == true || current_user.id == blog.user_id %>
+  <% if current_user.admin == true || current_user.id == @user.id %>
     <section>
       <div class="container">
         <div class="row">

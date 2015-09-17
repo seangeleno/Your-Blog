@@ -10,12 +10,13 @@ class BlogsController < ApplicationController
 	end
 	def create
 		logged_user
-		@blog = @user.blogs.new( blog_params )
-		if @blog.save
-			redirect_to user_path( @user.id )
-		else
-			render :new
+		keys = params.keys
+		keys.each do |k|
+			if k["blog"] === "blog"
+				Blog.create({ title: params[ k ]["title"], post: params[ k ]["post"], user_id: current_user.id })
+			end
 		end
+		render :index
 	end
 	def show
 		logged_user
@@ -43,7 +44,7 @@ class BlogsController < ApplicationController
 
 	private
 	def blog_params
-		params.require( :blog ).permit( :title , :post )
+		params
 	end
 	def logged_user
 		@user = User.find( current_user[ :id ] )

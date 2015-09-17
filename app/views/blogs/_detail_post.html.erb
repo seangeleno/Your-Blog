@@ -1,16 +1,11 @@
 <div class="nav-blocker"></div>
-
+<button class="newPost">new post</button>
 <section class="edit">
 	<div class="container containerToggle">
 		<div class="row">
 			<div class="col-sm-12 colToggle">
 				<div class="droppable">
 					<%= form_for ( [ @user , @blog ] ) do |f| %>
-						<p><%= f.label :title %></p>
-						<p class="title-area"><%= f.text_field :title %></p>
-							<hr />
-						<p><%= f.label :post %></p>
-						<p class="post-area"><%= f.text_area :post %></p>
 						<hr />
 						<ul>
 							<li><%= f.submit "Submit" , class: "btn"  %></li>

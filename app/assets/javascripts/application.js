@@ -75,3 +75,15 @@ $(function() {
     }
   });
 });
+$(function() {
+	$( ".newPost" ).on( "click", function () {
+	  var form = $(".edit form"),
+	      newId = form.find("div.newPost").length + 1,
+	      templateHTML = $(".postTemplate").html();
+
+	  console.log(templateHTML);
+
+	  templateHTML = templateHTML.replace(/{{id}}/g, newId);
+	  form.find("input[type='submit'].btn").before(templateHTML);
+	});
+});
