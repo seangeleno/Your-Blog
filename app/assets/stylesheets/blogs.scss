@@ -38,6 +38,11 @@ ul li {
 
 /* Edit Post */
 .edit {
+
+	.froala-element.f-basic {
+		min-height: 600px;
+	}
+
 	.title-area textarea {
 		width: 100%;
 	}
@@ -46,8 +51,8 @@ ul li {
 		display: inline;
 	}
 
-	.post-area textarea {
-		height: 300px;
+	.post-area {
+		min-height: 500px;
 		width: 100%;
 		padding: 5px;
 	}
@@ -61,18 +66,18 @@ ul li {
 	}
 
 	.toggleEditor {
-			margin-left: -450px;
+			margin-left: -100px;
 	}
 
 	.blogEditor {
-		padding: 0 0 15px 0;
+		padding: 0;
 		background: #fff;
 		border-top: 2px solid #333;
 		border-left: 10px solid #333;
 		border-bottom: 2px solid #333;
 		z-index: 10;
 		position: fixed;
-		width: 450px;
+		width: 100px;
 		left: 100%;
 
 		.cogHolder {
@@ -89,39 +94,6 @@ ul li {
 		}
 		.tab-content {
 			padding: 20px;
-		}
-		.mainListOptions>li {
-			display: inline-block;
-			padding-left: 15px;
-		}
-		.blogOption>li {
-			display: list-item;
-		}
-		.nav-pills {
-			text-align: center;
-			border: none;
-			margin: none;
-		}
-		.nav-pills>li {
-			float: none;
-			border-bottom: 2px solid #333;
-			outline: none;
-			width: 100%;
-			margin: 0;
-			padding: 0;
-			display: list-item;
-		}
-		.nav-pills>li>a {
-			border-radius: 0;
-			background: none;
-			color: #333;
-			border: none;
-			transition: all ease .2s;
-		}
-		.nav-pills>li.active>a {
-			background: #333;
-			border: none;
-			color: #fff;
 		}
 	}
 }

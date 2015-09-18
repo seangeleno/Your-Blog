@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
 	include SessionsHelper
+	include BlogsHelper
 
 	def index
 		@blogs = Blog.all
@@ -11,7 +12,8 @@ class BlogsController < ApplicationController
 	def create
 		logged_user
 		@blog = @user.blogs.new( blog_params )
-		if @blog.save
+
+	  if @blog.save
 			redirect_to user_path( @user.id )
 		else
 			render :new
@@ -19,11 +21,13 @@ class BlogsController < ApplicationController
 	end
 	def show
 		logged_user
-		@blog = Blog.find( params[ @user.id ] )
+		@blog = Blog.find( params[ :id ] )
+		@content = @blog.content
 	end
 	def edit
 		logged_user
 		@blog = Blog.find( params[ :id ] )
+		@content = @blog.content
 	end
 	def update
 		logged_user
@@ -43,7 +47,7 @@ class BlogsController < ApplicationController
 
 	private
 	def blog_params
-		params.require( :blog ).permit( :title , :post )
+		params.require( :blog ).permit( :content )
 	end
 	def logged_user
 		@user = User.find( current_user[ :id ] )

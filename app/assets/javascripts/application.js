@@ -53,25 +53,20 @@
 //= require jquery-ui/effect-slide
 //= require jquery-ui/effect-transfer
 // Load all Bootstrap JavaScript
+//= require froala_editor.min.js
+//= require plugins/block_styles.min.js
+//= require plugins/colors.min.js
+//= require plugins/media_manager.min.js
+//= require plugins/tables.min.js
+//= require plugins/video.min.js
+//= require plugins/font_family.min.js
+//= require plugins/font_size.min.js
+//= require plugins/file_upload.min.js
+//= require plugins/lists.min.js
+//= require plugins/char_counter.min.js
+//= require plugins/fullscreen.min.js
+//= require plugins/urls.min.js
+//= require plugins/inline_styles.min.js
+//= require plugins/entities.min.js
 //= require turbolinks
 //= require_tree .
-
-//collapse editor
-$(function(){
-  $( ".fa-cog" ).click( function(){
-    $( this ).toggleClass( "rotateToggle" , 500 );
-    $( ".blogEditor" ).toggleClass( "toggleEditor" , 500 );
-    $( ".colToggle" ).toggleClass( "colEditPad" , 500);
-    $( ".containerToggle" ).toggleClass( "container-fluid" , 500 );
-    $( ".containerToggle" ).toggleClass( "container" , 500 );
-  });
-});
-
-$(function() {
-  $( ".draggable" ).draggable();
-  $( ".droppable" ).droppable({
-    drop: function( event, ui ) {
-      console.log("drop")
-    }
-  });
-});

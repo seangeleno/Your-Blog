@@ -62,3 +62,22 @@
   }
 
 }
+
+.editUser {
+  background: #333;
+  padding: 15px;
+
+  .inlineList {
+    margin: 0;
+    
+  	li {
+  		display: inline;
+  	}
+  	a {
+  		background: none;
+      border: 2px solid #fff;
+      margin: 0;
+  	}
+  }
+
+}
