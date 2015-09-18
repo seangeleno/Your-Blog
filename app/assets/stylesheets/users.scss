@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-header-img {
-  background: image-url("static/header.jpg") center center no-repeat fixed;
+  background: url("http://isitaccessible.com/wp-content/uploads/2014/10/Road-To-City.jpg") bottom center no-repeat fixed;
   background-size: cover;
   height: 400px;
 
@@ -13,15 +13,18 @@
   .currentUserInfo {
     position: absolute;
     margin: 0;
-    top: 85px;
+    top: 277px;
     color: #fff;
+    background: rgba(0,0,0,.8);
 
     .userName {
-      background: rgba(0,0,0,.8);
       padding: 20px 30px;
     }
     li {
       display: inline-block;
+    }
+    img {
+      width: 100px;
     }
   }
 }
@@ -43,11 +46,11 @@
   #login_email , #login_password , #user_name , #user_email , #user_password , #user_password_confirmation {
     width: 300px;
     padding: 10px;
-    color: #333;
+    color: #111;
   }
   .avatarBtn {
     padding: 10px 20px;
-    background: #333;
+    background: #111;
     border-radius: 0;
     color:#ccc;
     transition: all ease .3s;
@@ -57,19 +60,19 @@
     padding: 10px;
     width: 300px;
     margin: 20px 0 40px 0;
-    color: #333;
+    color: #111;
     font-size: 18px;
   }
 
 }
 
 .editUser {
-  background: #333;
+  background: #111;
   padding: 15px;
 
   .inlineList {
     margin: 0;
-    
+
   	li {
   		display: inline;
   	}

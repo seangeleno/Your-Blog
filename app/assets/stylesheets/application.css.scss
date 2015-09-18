@@ -82,7 +82,7 @@ a:hover {
 }
 .btn {
 	padding: 10px 20px;
-	background: #333;
+	background: #111;
 	border-radius: 0;
 	color:#ccc;
 	transition: all ease .3s;
@@ -92,7 +92,7 @@ a:hover {
 	background: #1b1b1b;
 }
 textarea , .title-area input {
-	color: #333;
+	color: #111;
 	width: 100%;
 	padding: 10px;
 }
@@ -170,7 +170,13 @@ textarea , .title-area input {
 	height: 70px;
 }
 .navbar-brand {
-	padding: 20px 15px;
+  background: url("http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/crumpled-paper-icons-social-media-logos/110203-crumpled-paper-icon-social-media-logos-blogger-logo-square.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  margin-top: 5px;
 }
 .navbar-toggle .icon-bar {
 	background: #fff;
@@ -188,7 +194,7 @@ textarea , .title-area input {
 .footerBar {
 	padding: 30px 0;
 	margin-top: 30px;
-	background: rgba(0,0,0,1);
+	background: #111;
 	color: #fff;
 
 	a {
@@ -207,7 +213,7 @@ footer {
 	padding: 0 0 30px 0;
 	margin-top: 0;
   background-size: cover;
-	background-color: rgba(0,0,0,1);
+	background-color: #111;
 	color: #fff;
 
 	a {
@@ -221,6 +227,6 @@ footer {
 		padding: 10px;
 		font-size: 16px;
 		width:300px;
-		color: #333;
+		color: #111;
 	}
 }
