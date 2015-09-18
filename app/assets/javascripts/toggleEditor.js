@@ -7,7 +7,7 @@ $(function() {
 $(function(){
   $( ".froala-editor" ).wrap( '<div class="blogEditor toggleEditor"></div>' );
   $( ".blogEditor" ).append( '<div class="cogHolder"><i class="fa fa-cog fa-2x"></i></div>' );
-});
+  });
 
 $(function() {
   $( ".fa-cog" ).click( function(){

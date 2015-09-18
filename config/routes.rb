@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root "static#index"
 
+  get "blogs" => "blogs#index", as: :all_blogs
   resources :users do
     resources :blogs do
       resources :comments
